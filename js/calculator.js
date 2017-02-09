@@ -42,7 +42,7 @@ function calculate() {
 		$('body').append('<div class="lost">You ran out of money. <br> (Hint: Get more education!)<br><button class="btn btn-success btn-lg try-again">Try Again</button></div>')
 		$('.navbar').append('<div class="sad"><span class="glyphicon glyphicon-remove"></span></div>')
 	}else if(leftover > 0 && leftover < 500){
-		$('.outcome-leftover').fadeIn(250).fadeOut(250).fadeIn(250).fadeOut(250).fadeIn(250).fadeOut(250).fadeIn(250);
+		$('.outcome-leftover').fadeIn(150).fadeOut(150).fadeIn(150).fadeOut(150).fadeIn(150).fadeOut(150).fadeIn(150);
 	}
 	$('.outcome-leftover').text(leftover)
 }

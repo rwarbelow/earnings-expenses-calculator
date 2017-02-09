@@ -5,8 +5,9 @@
  */
  /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
  .card {
-  width: 70%;
-}
+    max-height: 70%;
+    max-width: 70%;
+  }
 
 #label {
   font-weight: bold;
@@ -65,10 +66,9 @@
 }
 
 .col-md-3 {
-  border: 2px solid black;
-  height: 250px;
+  height: 230px;
   text-align: center;
-  padding: 20px;
+  margin-bottom: 15px;
 }
 
 .ed-choice {
