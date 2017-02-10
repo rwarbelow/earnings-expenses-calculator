@@ -76,12 +76,17 @@
   border: 1px solid black;
 }
 
+.bottom {
+  padding-bottom: 10px;
+}
+
 #ready {
   display: none;
 }
 
 .navbar {
-  height: 230px;
+  display: flex;
+  flex-direction: column;
 }
 
 .selected {
@@ -100,7 +105,7 @@ html {
 }
 body {
   margin: 0;
-  padding-top: 250px;
+  padding-top: 260px;
 }
 article,
 aside,
