@@ -41,8 +41,8 @@ function calculate(element) {
 	var leftover = earnings - expenses
 	if(leftover < 0) {
 		$('.container').hide()
-		$('body').append('<div class="lost">You can\'t afford that. <br> (Hint: Get more education!)<br><button class="btn btn-success btn-lg try-again">Try Again</button></div>')
-		$('.navbar').append('<div class="sad"><span class="glyphicon glyphicon-remove"></span></div>')
+		$('body').append('<div class="lost">You can\'t afford that. <br> You need more education!<br><button class="btn btn-success btn-lg try-again">Try Again</button></div>')
+		$('.navbar').append('<div class="sad"><img class="girl-no" src="images/girl-no.png"></div>')
 		$('body').on('click', '.try-again', function(){
 			$('.lost').remove();
 			$('.container').show();
