@@ -1,24 +1,19 @@
 $(document).ready(function(){
-	$('#myModal').on('shown.bs.modal', function () {
-	})
-	
 	edSet = false
 	$('.ed-choice').on('click', function(){
 		$('.gone').remove()
 		$('.after-start').removeClass('after-start')
-		$('.ed-choice').removeClass('earnings-selected')
-		$(this).toggleClass('earnings-selected')
-		edSet = true
 		var salary = $(this).data('earnings')
 		var starter = $(this).data('starter')
 		var edLevel = $(this).find('#label').text()
-		$('.outcome-salary').text(salary)
-		calculate()
+		if(salary - calculateExpenses() > 0){
+			$('.ed-choice').removeClass('earnings-selected')
+			$(this).toggleClass('earnings-selected')
+			edSet = true
+			$('.outcome-salary').text(salary)
+			calculate()
+		}
 	});
-
-	// $('body').on('click', '.try-again', function(){
-	// 	window.location.reload(true);
-	// });
 	$('.col-md-3').on('click', function(){
 		if(edSet){
 			$(this).toggleClass('selected')
@@ -29,14 +24,18 @@ $(document).ready(function(){
 	});
 });
 
-
-function calculate(element) {
+function calculateExpenses(){
 	var expenses = 0
-	$('.warning').empty();
 	$('.selected').each(function() {
 		var itemCost = parseInt($(this).find('.cost').text());
 		expenses = expenses + itemCost
 	});
+	return expenses
+}
+
+function calculate(element) {
+	$('.warning').empty();
+	var expenses = calculateExpenses()
 	$('.outcome-expenses').text(expenses)
 	var earnings = $('.earnings-selected').data('earnings')
 	var leftover = earnings - expenses
